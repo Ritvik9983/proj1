@@ -1,0 +1,274 @@
+*{margin: 0vw;}
+body{
+    background-color: rgb(193, 193, 193);
+}
+.wrapper{
+    position: relative;
+    top: 10vw;
+    left: 36vw;
+    width: 30vw;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1vw;
+}
+.users{padding: 25px 30px;}
+.users header, .users-list a{display: flex;
+              text-decoration: none;
+              align-items: center;
+              padding-bottom: 20px;
+              justify-content: space-between;
+              border-bottom: 1px solid rgb(230, 230, 230);}
+.users header .content img{
+    height: 50px;
+    width: 50px;
+}
+:is(.users, .users-list) header .content,
+a .content{
+    display: flex;
+}
+.wrapper img{
+    object-fit: cover;
+    border-radius: 50%;
+}
+:is(.users, .users-list) .details{
+    color: rgb(0, 0, 0);
+    margin-left: 15px;
+}
+:is(.users, .users-list) .details span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.users header .logout{
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 7px 15px;
+    font-size: 17px;
+    border-radius: 5px;
+}
+.users .search{
+    position: relative;
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.users .search .text{
+    font-size: 18px;
+}
+.users .search input{
+    position: absolute;
+    height: 42px;
+    width: 21vw;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 0px 13px;
+    font-size: 16px;
+    border-radius: 5px 0px 0px 5px;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.users .search input.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.users .search button{
+    width: 47px;
+    height: 42px;
+    border: none;
+    outline: none;
+    color: rgb(51, 51, 51);
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.2s ease;
+}
+.users .search button.active{
+    color: rgb(255, 255, 255);
+    background-color: rgb(51, 51, 51);
+}
+.users .search button.active i::before{
+    content:  "\f00d";
+}
+.users-list{
+    max-height: 350px;
+    overflow-y: auto;
+}
+.users-list::-webkit-scrollbar{
+    width: 0px;
+}
+.users-list a{
+    padding-right: 15px;
+    margin-bottom: 10px;
+    page-break-after: 10px;
+    border-bottom-color: rgb(241, 241, 241);
+}
+.users-list a:last-child{
+    border: none;
+    margin: 0vw;
+}
+.users-list a .content img{
+    height: 40px;
+    width: 40px;
+}
+.users-list a .content p{
+    color: rgb(131, 131, 131);
+}
+.users-list a .status-dot.offline{
+    color: rgb(131, 131, 131);
+}
+.users-list a .status-dot{
+    font-size: 12px;
+    color: rgb(70, 134, 105);
+}
+
+
+/*chat area css styling*/
+
+.chat-area header{
+    display: flex;
+    align-items: center;
+    padding: 18px 30px;
+}
+.chat-area header .back-icon{
+    font-size: 18px;
+    color: rgb(51, 51, 51);
+}
+.chat-area header img{
+    height: 45px;
+    width: 45px;
+    margin: 0px 15px;
+}
+.chat-area header span{
+    font-size: 17px;
+    font-weight: 500;
+}
+.chat-box{
+    height: 350px;
+    background-color: rgb(221, 221, 221);
+    padding: 10px 30px 20px 30px;
+    box-shadow: inset 0px 32px 32px -32px rgba(0, 0, 0, 0.05),
+                inset 0px -32px 32px -32px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
+}
+.chat-box::-webkit-scrollbar{
+    width: 0px;
+}
+.chat-box .chat{
+    margin: 15px 0px;
+}
+.chat-box .chat p{
+    padding: 8px 16px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.08)
+                0 16px 16px -16px rgba(0, 0, 0, 0.10);
+    word-wrap: break-word;
+}
+.chat-box .outgoing{
+    display: flex;
+}
+.outgoing .details{
+    margin-left: auto;
+    max-width: calc(100% - 130px);
+}
+.outgoing .details p{
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+    border-radius: 18px 18px 0px 18px;
+}
+.outgoing .details p a{text-align: center;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 18px 18px 0px 18px;
+}
+.outgoing .details p a img{
+    max-width: calc(150% - 120px);
+    border-radius: 1vw;
+}
+.outgoing .details p a i svg{
+    color: rgb(255, 255, 255);
+    margin-left: 1vw;
+    width: 1vw;
+    height: 2vw;
+    border-radius: 1vw;
+}
+.chat-box .incoming{
+    display: flex;
+    align-items: flex-end;
+}
+.incoming .details p a{text-align: center;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 18px 18px 18px 0px;
+}
+.incoming .details p a i{
+    width: 1vw;
+    height: 1vw;
+    border-radius: 1vw;
+}
+.incoming .details p a img{
+    width: 15vw;
+    height: 10vw;
+    border-radius: 1vw;
+}
+.incoming .details p a i svg{
+    margin-left: 1vw;
+    width: 1vw;
+    height: 2vw;
+    border-radius: 1vw;
+}
+.chat-box .incoming img{
+    height: 35px;
+    width: 35px;
+}
+.incoming .details{
+    margin-left: 10px;
+    margin-right: auto;
+    max-width: calc(100% - 130px);
+}
+.incoming .details p{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 18px 18px 18px 0px;
+}
+.chat-area .typing-area{
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.chat-area .typing-area input{
+    height: 45px;
+    width: calc(100% - 58px);
+    font-size: 17px;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 0px 13px;
+    border-radius: 5px;
+    outline: none;
+}
+.typing-area button{
+    width: 55px;
+    border: none;
+    outline: none;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+    background-color: rgb(51, 51, 51);
+}
+.typing-area button i{
+    color: rgb(255, 255, 255);
+    font-size: 28px;
+}
+#doc_upload_butt{
+    position: relative;
+    top: 6.3vw;
+    left: 56.5vw;
+    width: 55px;
+    border: none;
+    outline: none;
+    padding: 0vw;
+    margin: 0vw;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(94, 94, 94);
+    font-size: 28px;
+}
